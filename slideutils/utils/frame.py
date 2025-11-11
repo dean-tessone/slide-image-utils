@@ -113,7 +113,7 @@ class Frame:
                 return None
             colnames = ["cell_id", "y", "x", "area", "eccentricity"]
             colnames.extend([ch + "_mean" for ch in self.channels])
-            props.set_axis(colnames, axis=1, inplace=True)
+            props = props.set_axis(colnames, axis=1)
             props = props.astype({"cell_id": int})
             props.insert(0, "frame_id", self.frame_id)
         return props
@@ -163,7 +163,7 @@ class Frame:
                 "perimeter",
             ]
             colnames.extend([ch + "_mean" for ch in self.channels])
-            props.set_axis(colnames, axis=1, inplace=True)
+            props = props.set_axis(colnames, axis=1)
             props = props.astype({"cell_id": int})
             props.insert(0, "frame_id", self.frame_id)
         return props
@@ -189,7 +189,7 @@ class Frame:
                 return None
             colnames = ["cell_id", "y", "x"]
             colnames.extend([channel + "_" + c for c in columns])
-            props.set_axis(colnames, axis=1, inplace=True)
+            props = props.set_axis(colnames, axis=1)
             props = props.astype({"cell_id": int})
             props.insert(0, "frame_id", self.frame_id)
             return props

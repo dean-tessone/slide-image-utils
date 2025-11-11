@@ -5,7 +5,7 @@ whole slide microscopy image data at a single cell level.
 
 ## Prerequisites
 
-- Python 3.9
+- Python 3.12 or higher
 
 ## Setup
 

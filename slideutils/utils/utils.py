@@ -123,7 +123,7 @@ def calc_basic_features(frame):
     props = pd.DataFrame(props)
     colnames = ["cell_id", "y", "x", "area", "eccentricity"]
     colnames.extend([ch + "_mean" for ch in frame.channels])
-    props.set_axis(colnames, axis=1, inplace=True)
+    props = props.set_axis(colnames, axis=1)
     props = props.astype({"cell_id": int})
     props.insert(0, "frame_id", frame.frame_id)
     return props
